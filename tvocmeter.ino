@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <ArduinoOTA.h>
+#include "OTA_PASSWORD.h"
 #include <EEPROM.h>
 
 #include <Wire.h>
@@ -65,7 +66,7 @@ void setup(void)
     print("\nTVOC meter\n");
 
     ArduinoOTA.setHostname("esp-tvoc");
-    ArduinoOTA.setPassword("tvoc");
+    ArduinoOTA.setPassword(OTA_PASSWORD);
     ArduinoOTA.begin();
 
     // setup pins
